@@ -1,0 +1,9 @@
+.idea
+.vscode
+
+__pycache__/
+
+db.sqlite3
+migrations/
+
+/OnlineVideoConverter/secrets.py
