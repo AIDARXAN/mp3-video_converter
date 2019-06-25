@@ -10,5 +10,5 @@ in folder with settings.py create file secrets.py
 and put SECRET_KEY="your_key"
 
 python3 manage.py makemigrations
-python3 manage.py migrate
+python3 manage.py migrate 
 python3 manage.py runserver
