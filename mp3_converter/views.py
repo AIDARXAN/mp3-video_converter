@@ -32,6 +32,7 @@ def index(request):
         form = DownloadForm(request.POST)
         if form.is_valid():
             url = form.cleaned_data.get('url')
+            AudioFile.objects.create()
             ydl_opts = {
                 'format': 'bestaudio/best',
                 'postprocessors': [{
@@ -45,7 +46,7 @@ def index(request):
             with youtube_dl.YoutubeDL(ydl_opts) as ydl:
                 meta = ydl.extract_info(url, download=False)
                 
-                audio_file = AudioFile.objects.create(url=meta['url'], video_title=meta['title'])
+                audio_file = AudioFile.objects.create(url=url, video_title=meta["title"])
                 audio_file.save()
                 
                 return redirect(meta['url'])
