@@ -1,2 +1,2 @@
-Django==2.2.2
+Django==2.2.4
 youtube-dl==2019.06.21
